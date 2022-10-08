@@ -5,7 +5,11 @@ import TextInput from "./components/Forms/TextInput";
 const App = () => {
   return (
     <div className="App">
-      <TextInput text="hello" isInvalid={false} />
+      <TextInput
+        handleChange={(event) => {
+          console.log(event.target.value);
+        }}
+      />
     </div>
   );
 };
