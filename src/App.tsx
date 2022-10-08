@@ -5,10 +5,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { InputSchema } from "./library/input-schema/inputSchema";
 
-// interface IFormInput {
-//   fullName: string;
-// }
-
 const App = () => {
   const {
     control,
@@ -20,11 +16,6 @@ const App = () => {
       fullName: "",
     },
   });
-
-  // const onSubmit: SubmitHandler<IFormInput> = (data) => {
-  //   console.log(data);
-  // };
-  console.log(errors, "errors");
 
   return (
     <div className="App">
@@ -41,6 +32,16 @@ const App = () => {
           label="Full Name"
           name="fullName"
           required={true}
+        />
+        <TextInput
+          autoFocus={false}
+          control={control}
+          disabled={false}
+          errors={errors}
+          label="Contact Number"
+          name="contactNumber"
+          required={true}
+          type="number"
         />
         <input type="submit" />
       </form>

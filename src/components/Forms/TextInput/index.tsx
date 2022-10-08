@@ -10,16 +10,8 @@ interface InputProps {
   errors: any;
   disabled: boolean;
   autoFocus: boolean;
+  type?: string;
 }
-
-// interface Props {
-//   fullName?: string;
-//   isInvalid?: boolean;
-//   //num : number;
-//   // fn: (bob: string) => string;
-//   inputProps?: InputProps; // ? = make props optional
-//   handleChange: React.ChangeEventHandler<HTMLInputElement>;
-// }
 
 const TextInput: React.FC<InputProps> = ({
   control,
@@ -29,6 +21,7 @@ const TextInput: React.FC<InputProps> = ({
   errors,
   disabled = false,
   autoFocus,
+  type,
 }) => {
   return (
     <>
@@ -40,19 +33,16 @@ const TextInput: React.FC<InputProps> = ({
           <TextField
             variant="standard"
             label={label}
-            // defaultValue={text}
-            // error={isInvalid}
-            // helperText={isInvalid ? "Incorrect Entry" : ""}
             onChange={onChange}
-            // helperText={errors}
             disabled={disabled}
             autoFocus={autoFocus}
-            error={errors[name]?.message}
+            error={errors[name]?.message ? true : false}
             helperText={errors[name]?.message}
+            fullWidth
+            type={type}
           />
         )}
       />
-      {/* {errors[name] && <Alert severity="error">{errors[name]?.message}</Alert>} */}
     </>
   );
 };
