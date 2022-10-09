@@ -4,6 +4,7 @@ import TextInput from "./components/Forms/TextInput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { InputSchema } from "./library/input-schema/inputSchema";
+import ButtonComponent from "./components/Buttons";
 
 const App = () => {
   const {
@@ -54,7 +55,9 @@ const App = () => {
           name="email"
           required={true}
         />
-        <input type="submit" />
+        <ButtonComponent type="submit" width={"100%"} color="primary">
+          SUBMIT
+        </ButtonComponent>
       </form>
     </div>
   );
