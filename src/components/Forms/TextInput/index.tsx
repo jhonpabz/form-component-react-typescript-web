@@ -40,6 +40,7 @@ const TextInput: React.FC<InputProps> = ({
             helperText={errors[name]?.message}
             fullWidth
             type={type}
+            sx={{ mb: 1, mt: 1 }}
           />
         )}
       />

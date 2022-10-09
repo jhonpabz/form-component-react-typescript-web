@@ -28,7 +28,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
       fullWidth
       disabled={disabled}
       variant="contained"
-      sx={{ mt: 1, mb: 2, mx: 0.5, width: width }}
+      sx={{ mt: 2, mb: 2, mx: 0.5, width: width }}
       {...buttonProps}
     >
       {children}
