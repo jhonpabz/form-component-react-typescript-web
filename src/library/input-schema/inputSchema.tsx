@@ -8,5 +8,9 @@ export const InputSchema = yup
       .min(10, "Minimum of 10 number")
       .max(11, "Maximum of 11 number")
       .required("Please enter contact number"),
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Please enter email"),
   })
   .required();

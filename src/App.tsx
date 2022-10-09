@@ -14,6 +14,8 @@ const App = () => {
     resolver: yupResolver(InputSchema),
     defaultValues: {
       fullName: "",
+      contactNumber: "",
+      email: "",
     },
   });
 
@@ -42,6 +44,15 @@ const App = () => {
           name="contactNumber"
           required={true}
           type="number"
+        />
+        <TextInput
+          autoFocus={false}
+          control={control}
+          disabled={false}
+          errors={errors}
+          label="Email Address"
+          name="email"
+          required={true}
         />
         <input type="submit" />
       </form>
