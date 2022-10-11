@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import TextInput from "./components/Forms/TextInput";
+import TextFieldComponent from "./components/Forms/TextField/TextFieldComponent";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { InputSchema } from "./library/input-schema/inputSchema";
@@ -30,7 +30,7 @@ const App = () => {
               console.log(data);
             })}
           >
-            <TextInput
+            <TextFieldComponent
               autoFocus={true}
               control={control}
               disabled={false}
@@ -39,7 +39,7 @@ const App = () => {
               name="fullName"
               required={true}
             />
-            <TextInput
+            <TextFieldComponent
               autoFocus={false}
               control={control}
               disabled={false}
@@ -49,7 +49,7 @@ const App = () => {
               required={true}
               type="number"
             />
-            <TextInput
+            <TextFieldComponent
               autoFocus={false}
               control={control}
               disabled={false}

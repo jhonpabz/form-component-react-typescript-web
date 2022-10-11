@@ -1,19 +1,9 @@
 import React from "react";
 import { TextField } from "@mui/material";
 import { Controller } from "react-hook-form";
+import { TextFieldInterface } from "./TextFieldInterface";
 
-interface InputProps {
-  control: any;
-  name: string;
-  required: boolean;
-  label: string;
-  errors: any;
-  disabled: boolean;
-  autoFocus: boolean;
-  type?: string;
-}
-
-const TextInput: React.FC<InputProps> = ({
+const TextFieldComponent: React.FC<TextFieldInterface> = ({
   control,
   name,
   required,
@@ -48,4 +38,4 @@ const TextInput: React.FC<InputProps> = ({
   );
 };
 
-export default TextInput;
+export default TextFieldComponent;
