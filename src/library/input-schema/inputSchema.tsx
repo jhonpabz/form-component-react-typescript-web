@@ -5,9 +5,9 @@ export const InputSchema = yup
     fullName: yup.string().required("Please enter your full name"),
     contactNumber: yup
       .string()
+      .required("Please enter contact number")
       .min(10, "Minimum of 10 number")
-      .max(11, "Maximum of 11 number")
-      .required("Please enter contact number"),
+      .max(11, "Maximum of 11 number"),
     email: yup
       .string()
       .email("Invalid email format")
