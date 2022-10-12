@@ -27,7 +27,6 @@ const App = () => {
   const handleChange = (event: any) => {
     setAge(event.target.value);
   };
-  console.log(errors, "errors");
 
   return (
     <>
