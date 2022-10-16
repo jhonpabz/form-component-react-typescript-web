@@ -16,11 +16,6 @@ const App = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(InputSchema),
-    defaultValues: {
-      fullName: "",
-      contactNumber: "",
-      email: "",
-    },
   });
 
   const genderOptions: { value: string; label: string }[] = [
