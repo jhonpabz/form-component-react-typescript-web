@@ -7,6 +7,7 @@ import { InputSchema } from "./library/input-schema/inputSchema";
 import ButtonComponent from "./components/Forms/Buttons/ButtonComponent";
 import { Box } from "@mui/material";
 import DropdownComponent from "./components/Forms/Dropdown/DropdownComponent";
+import FormContainer from "./components/Forms/FormContainer/FormContainer";
 
 const App = () => {
   const {
@@ -41,7 +42,13 @@ const App = () => {
     <>
       <Box display="flex" alignItems="center" justifyContent="center">
         <Box sx={{ width: { sx: "100%", md: "75%", lg: "50%" }, p: { xs: 5 } }}>
-          <form
+          <FormContainer
+            defaultValues={{
+              fullName: "",
+              contactNumber: null,
+              email: "",
+            }}
+            schema={InputSchema}
             onSubmit={handleSubmit((data) => {
               console.log(data);
             })}
@@ -86,7 +93,7 @@ const App = () => {
             <ButtonComponent type="submit" width={"100%"} color="primary">
               SUBMIT
             </ButtonComponent>
-          </form>
+          </FormContainer>
         </Box>
       </Box>
     </>
