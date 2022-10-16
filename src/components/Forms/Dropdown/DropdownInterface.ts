@@ -1,17 +1,19 @@
-import { ReactNode } from "react";
+import { FieldValues } from "react-hook-form/dist/types/fields";
 import { Control } from "react-hook-form/dist/types/form";
 
 export interface DropdownInterface {
   name: any;
-  control: Control<
-    { fullName: string; contactNumber: string; email: string },
-    any
-  >;
+  control: any;
   defaultValue?: string;
-  children: React.ReactNode;
-  onChange: (event: any) => void;
   label: string;
-  value: number | null;
+  value?: string | null;
   errors: any;
   variant?: "standard" | "filled" | "outlined" | undefined;
+  id?: string;
+  labelId?: string;
+  selectId?: string;
+  options: {
+    value: string;
+    label: string;
+  }[];
 }
