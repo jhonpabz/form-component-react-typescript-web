@@ -1,6 +1,3 @@
-import { FieldValues } from "react-hook-form/dist/types/fields";
-import { Control } from "react-hook-form/dist/types/form";
-
 export interface DropdownInterface {
   name: any;
   control: any;
