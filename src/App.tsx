@@ -4,7 +4,7 @@ import TextFieldComponent from "./components/Forms/TextField/TextFieldComponent"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { InputSchema } from "./library/input-schema/inputSchema";
-import ButtonComponent from "./components/Buttons";
+import ButtonComponent from "./components/Forms/Buttons/ButtonComponent";
 import { Box } from "@mui/material";
 import DropdownComponent from "./components/Forms/Dropdown/DropdownComponent";
 

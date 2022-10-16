@@ -1,17 +1,8 @@
 import React from "react";
 import { Button } from "@mui/material";
+import { ButtonComponentInterface } from "./ButtonComponentInterface";
 
-interface ButtonProps {
-  children: React.ReactNode;
-  buttonProps?: any;
-  type: string;
-  width: string | number;
-  disabled?: boolean;
-  component?: string;
-  color: string;
-}
-
-const ButtonComponent: React.FC<ButtonProps> = ({
+const ButtonComponent: React.FC<ButtonComponentInterface> = ({
   children,
   buttonProps,
   type = "button",
@@ -19,6 +10,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   disabled = false,
   component = "button",
   color,
+  style,
 }) => {
   return (
     <Button
@@ -28,7 +20,13 @@ const ButtonComponent: React.FC<ButtonProps> = ({
       fullWidth
       disabled={disabled}
       variant="contained"
-      sx={{ mt: 2, mb: 2, mx: 0.5, width: width }}
+      style={style}
+      sx={{
+        mt: style ? "" : 2,
+        mb: style ? "" : 2,
+        mx: style ? "" : 0.5,
+        width: width,
+      }}
       {...buttonProps}
     >
       {children}
