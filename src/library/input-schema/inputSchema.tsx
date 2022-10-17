@@ -13,5 +13,6 @@ export const InputSchema = yup
       .email("Invalid email format")
       .required("Please enter email"),
     gender: yup.string().required("Gender is required"),
+    status: yup.string().required("Status is required"),
   })
   .required();

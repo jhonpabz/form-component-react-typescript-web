@@ -8,6 +8,7 @@ import ButtonComponent from "./components/Forms/Buttons/ButtonComponent";
 import { Box } from "@mui/material";
 import DropdownComponent from "./components/Forms/Dropdown/DropdownComponent";
 import FormContainer from "./components/Forms/FormContainer/FormContainer";
+import RadioButtonComponent from "./components/Forms/RadioButton/RadioButtonComponent";
 
 const App = () => {
   const {
@@ -26,6 +27,21 @@ const App = () => {
     {
       value: "Female",
       label: "Female",
+    },
+    {
+      value: "Others",
+      label: "Others",
+    },
+  ];
+
+  const statusOptions: { value: string; label: string }[] = [
+    {
+      value: "Single",
+      label: "Single",
+    },
+    {
+      value: "Married",
+      label: "Married",
     },
     {
       value: "Others",
@@ -83,6 +99,14 @@ const App = () => {
               control={control}
               errors={errors}
               options={genderOptions}
+            />
+
+            <RadioButtonComponent
+              radioButtonOptions={statusOptions}
+              name="status"
+              label="Status"
+              control={control}
+              errors={errors}
             />
 
             <ButtonComponent type="submit" width={"100%"} color="primary">
