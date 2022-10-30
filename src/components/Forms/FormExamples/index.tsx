@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import TextFieldComponent from "../TextField/TextFieldComponent";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { InputSchema } from "../../../library/input-schema/inputSchema";
 import ButtonComponent from "../Buttons/ButtonComponent";
 import { Box } from "@mui/material";
 import DropdownComponent from "../Dropdown/DropdownComponent";
 import FormContainer from "../FormContainer/FormContainer";
 import RadioButtonComponent from "../RadioButton/RadioButtonComponent";
+import { InputSchema } from "./InputSchema";
 
 const FormExamples = () => {
   const {
