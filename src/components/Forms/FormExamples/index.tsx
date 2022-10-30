@@ -72,7 +72,10 @@ const FormExamples = () => {
               name="fullName"
               required={true}
             />
-            <TextFieldComponent
+            <div data-testid="custom-element" >
+              <h1>Testing</h1>
+              </div>
+            {/* <TextFieldComponent
               autoFocus={false}
               control={control}
               disabled={false}
@@ -106,7 +109,7 @@ const FormExamples = () => {
               label="Status"
               control={control}
               errors={errors}
-            />
+            /> */}
 
             <ButtonComponent type="submit" width={"100%"} color="primary">
               SUBMIT
