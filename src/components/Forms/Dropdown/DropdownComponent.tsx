@@ -39,7 +39,7 @@ const DropdownComponent: React.FC<DropdownInterface> = ({
               id={selectId}
               label={label}
               onChange={onChange}
-              value={value}
+              value={value || ""}
             >
               {options.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
