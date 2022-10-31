@@ -8,6 +8,7 @@ import DropdownComponent from "../Dropdown/DropdownComponent";
 import FormContainer from "../FormContainer/FormContainer";
 import RadioButtonComponent from "../RadioButton/RadioButtonComponent";
 import { InputSchema } from "./InputSchema";
+import NumberFieldComponent from "../NumberField/NumberFieldComponent";
 
 const FormExamples = () => {
   const {
@@ -73,7 +74,7 @@ const FormExamples = () => {
               required={true}
             />
             {/* <div data-testid="custom-element" /> */}
-            <TextFieldComponent
+            <NumberFieldComponent 
               autoFocus={false}
               control={control}
               disabled={false}
@@ -81,8 +82,8 @@ const FormExamples = () => {
               label="Contact Number"
               name="contactNumber"
               required={true}
-              type="number"
             />
+
             <TextFieldComponent
               autoFocus={false}
               control={control}
