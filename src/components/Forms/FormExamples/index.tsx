@@ -3,12 +3,13 @@ import TextFieldComponent from "../TextField/TextFieldComponent";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ButtonComponent from "../Buttons/ButtonComponent";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import DropdownComponent from "../Dropdown/DropdownComponent";
 import FormContainer from "../FormContainer/FormContainer";
 import RadioButtonComponent from "../RadioButton/RadioButtonComponent";
 import { InputSchema } from "./InputSchema";
 import NumberFieldComponent from "../NumberField/NumberFieldComponent";
+import Paper from "@mui/material/Paper";
 
 const FormExamples = () => {
   const {
@@ -51,70 +52,90 @@ const FormExamples = () => {
 
   return (
     <>
-      <Box display="flex" alignItems="center" justifyContent="center">
-        <Box sx={{ width: { sx: "100%", md: "75%", lg: "50%" }, p: { xs: 5 } }}>
-          <FormContainer
-            defaultValues={{
-              fullName: "",
-              contactNumber: null,
-              email: "",
-            }}
-            schema={InputSchema}
-            onSubmit={handleSubmit((data) => {
-              console.log(data);
-            })}
-          >
-            <TextFieldComponent
-              autoFocus={true}
-              control={control}
-              disabled={false}
-              errors={errors}
-              label="Full Name"
-              name="fullName"
-              required={true}
-            />
-            {/* <div data-testid="custom-element" /> */}
-            <NumberFieldComponent 
-              autoFocus={false}
-              control={control}
-              disabled={false}
-              errors={errors}
-              label="Contact Number"
-              name="contactNumber"
-              required={true}
-            />
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ backgroundColor: "#f9fafc" }}
+      >
+        <Paper sx={{ maxWidth: 575, mt: 14 }} elevation={24}>
+          <Box sx={{ textAlign: "center", mt: 7 }}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              display="block"
+              component="div"
+            >
+              Register
+            </Typography>
+            <Typography variant="caption" display="block" gutterBottom>
+              Sample Form Sample Text Here
+            </Typography>
+          </Box>
+          <Box sx={{ p: 5 }}>
+            <FormContainer
+              defaultValues={{
+                fullName: "",
+                contactNumber: null,
+                email: "",
+              }}
+              schema={InputSchema}
+              onSubmit={handleSubmit((data) => {
+                console.log(data);
+              })}
+            >
+              <TextFieldComponent
+                autoFocus={true}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Full Name"
+                name="fullName"
+                required={true}
+              />
+              {/* <div data-testid="custom-element" /> */}
+              <NumberFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Contact Number"
+                name="contactNumber"
+                required={true}
+              />
 
-            <TextFieldComponent
-              autoFocus={false}
-              control={control}
-              disabled={false}
-              errors={errors}
-              label="Email Address"
-              name="email"
-              required={true}
-            />
+              <TextFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Email Address"
+                name="email"
+                required={true}
+              />
 
-            <DropdownComponent
-              name="gender"
-              label="Gender"
-              control={control}
-              errors={errors}
-              options={genderOptions}
-            />
+              <DropdownComponent
+                name="gender"
+                label="Gender"
+                control={control}
+                errors={errors}
+                options={genderOptions}
+              />
 
-            <RadioButtonComponent
-              radioButtonOptions={statusOptions}
-              name="status"
-              label="Status"
-              control={control}
-              errors={errors}
-            />
+              <RadioButtonComponent
+                radioButtonOptions={statusOptions}
+                name="status"
+                label="Status"
+                control={control}
+                errors={errors}
+              />
 
-            <ButtonComponent type="submit" width={"100%"} color="primary">
-              SUBMIT
-            </ButtonComponent>
-          </FormContainer>
-        </Box>
+              <ButtonComponent type="submit" width={"100%"} color="primary">
+                SUBMIT
+              </ButtonComponent>
+            </FormContainer>
+          </Box>
+        </Paper>
       </Box>
     </>
   );
