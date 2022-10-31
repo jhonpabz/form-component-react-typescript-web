@@ -32,7 +32,7 @@ const RadioButtonComponent: React.FC<RadioButtonInterface> = ({
             <RadioGroup row aria-labelledby={ariaLabelledby} {...field}>
               {radioButtonOptions.map((radioButtonOption) => (
                 <FormControlLabel
-                  value={radioButtonOption.value}
+                  value={radioButtonOption.value || ""}
                   control={<Radio />}
                   label={radioButtonOption.label}
                 />
