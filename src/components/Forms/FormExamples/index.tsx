@@ -10,6 +10,7 @@ import RadioButtonComponent from "../RadioButton/RadioButtonComponent";
 import { InputSchema } from "./InputSchema";
 import NumberFieldComponent from "../NumberField/NumberFieldComponent";
 import Paper from "@mui/material/Paper";
+import InputStyleComponent from "../InputStyle/InputStyleComponent";
 
 const FormExamples = () => {
   const {
@@ -50,6 +51,8 @@ const FormExamples = () => {
     },
   ];
 
+  const cssFramework: string[] = ["MATERIAL UI", "PLAIN"];
+
   return (
     <>
       <Box
@@ -58,7 +61,7 @@ const FormExamples = () => {
         justifyContent="center"
         sx={{ backgroundColor: "#f9fafc" }}
       >
-        <Paper sx={{ maxWidth: 575, mt: 14 }} elevation={24}>
+        <Paper sx={{ maxWidth: 575, mt: 14 }} elevation={1}>
           <Box sx={{ textAlign: "center", mt: 7 }}>
             <Typography
               variant="h4"
@@ -93,6 +96,7 @@ const FormExamples = () => {
                 name="fullName"
                 required={true}
               />
+              <InputStyleComponent cssFramework={cssFramework} />
               {/* <div data-testid="custom-element" /> */}
               <NumberFieldComponent
                 autoFocus={false}
