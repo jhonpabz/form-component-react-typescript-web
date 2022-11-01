@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import TextFieldComponent from "../TextField/TextFieldComponent";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -53,6 +53,17 @@ const FormExamples = () => {
 
   const cssFramework: string[] = ["MATERIAL UI", "PLAIN"];
 
+  const [inputStyleTextField, setInputStyleTextField] = useState("MATERIAL UI");
+
+  console.log(inputStyleTextField, "inputStyleTextField");
+
+  const wrapperSetParentState = useCallback(
+    (val: React.SetStateAction<string>) => {
+      setInputStyleTextField(val);
+    },
+    [setInputStyleTextField]
+  );
+
   return (
     <>
       <Box
@@ -96,7 +107,11 @@ const FormExamples = () => {
                 name="fullName"
                 required={true}
               />
-              <InputStyleComponent cssFramework={cssFramework} />
+              <InputStyleComponent
+                cssFramework={cssFramework}
+                parentState={inputStyleTextField}
+                parentStateSetter={wrapperSetParentState}
+              />
               {/* <div data-testid="custom-element" /> */}
               <NumberFieldComponent
                 autoFocus={false}

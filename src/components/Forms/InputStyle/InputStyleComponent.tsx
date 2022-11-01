@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/joy/Box";
 import Radio from "@mui/joy/Radio";
 import RadioGroup from "@mui/joy/RadioGroup";
@@ -6,9 +6,15 @@ import { InputStyleInterface } from "./InputStyleInterface";
 
 const InputStyleComponent: React.FC<InputStyleInterface> = ({
   cssFramework,
+  parentStateSetter,
+  parentState,
 }) => {
   const [inputStyle, setInputStyle] = useState<string>("MATERIAL UI");
   console.log(inputStyle, "inputStyle");
+
+  useEffect(() => {
+    parentStateSetter(inputStyle);
+  }, [parentStateSetter, inputStyle]);
 
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
