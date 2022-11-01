@@ -7,7 +7,6 @@ import { InputStyleInterface } from "./InputStyleInterface";
 const InputStyleComponent: React.FC<InputStyleInterface> = ({
   cssFramework,
   parentStateSetter,
-  parentState,
 }) => {
   const [inputStyle, setInputStyle] = useState<string>("MATERIAL UI");
   console.log(inputStyle, "inputStyle");

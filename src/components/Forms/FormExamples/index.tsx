@@ -106,6 +106,7 @@ const FormExamples = () => {
                 label="Full Name"
                 name="fullName"
                 required={true}
+                inputStyleTextField={inputStyleTextField}
               />
               <InputStyleComponent
                 cssFramework={cssFramework}

@@ -12,6 +12,7 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
   disabled = false,
   autoFocus,
   type,
+  inputStyleTextField = "MATERIAL UI",
 }) => {
   return (
     <>
@@ -19,20 +20,27 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
         name={name}
         control={control}
         rules={{ required: required }}
-        render={({ field: { onChange, value } }) => (
-          <TextField
-            variant="standard"
-            label={label}
-            onChange={onChange}
-            disabled={disabled}
-            autoFocus={autoFocus}
-            error={errors[name]?.message ? true : false}
-            helperText={errors[name]?.message}
-            fullWidth
-            type={type}
-            sx={{ mb: 1, mt: 1 }}
-          />
-        )}
+        render={({ field: { onChange, value } }) =>
+          inputStyleTextField === "MATERIAL UI" ? (
+            <TextField
+              variant="standard"
+              label={label}
+              onChange={onChange}
+              disabled={disabled}
+              autoFocus={autoFocus}
+              error={errors[name]?.message ? true : false}
+              helperText={errors[name]?.message}
+              fullWidth
+              type={type}
+              sx={{ mb: 1, mt: 1 }}
+            />
+          ) : (
+            <>
+              <p>{label}</p>
+              <input type="text" />
+            </>
+          )
+        }
       />
     </>
   );

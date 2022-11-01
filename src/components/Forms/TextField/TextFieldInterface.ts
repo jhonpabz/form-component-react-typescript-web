@@ -7,4 +7,5 @@ export interface TextFieldInterface {
   disabled: boolean;
   autoFocus: boolean;
   type?: string;
+  inputStyleTextField?: string;
 }
