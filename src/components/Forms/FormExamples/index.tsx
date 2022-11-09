@@ -133,23 +133,24 @@ const FormExamples = () => {
                 name="email"
                 required={true}
               />
-
-              <DropdownComponent
-                name="gender"
-                label="Gender"
-                control={control}
-                errors={errors}
-                options={genderOptions}
-              />
-
-              <RadioButtonComponent
-                radioButtonOptions={statusOptions}
-                name="status"
-                label="Status"
-                control={control}
-                errors={errors}
-              />
-
+              <div data-testid="select-element">
+                <DropdownComponent
+                  name="gender"
+                  label="Gender"
+                  control={control}
+                  errors={errors}
+                  options={genderOptions}
+                />
+              </div>
+              <div data-testid="radio-element">
+                <RadioButtonComponent
+                  radioButtonOptions={statusOptions}
+                  name="status"
+                  label="Status"
+                  control={control}
+                  errors={errors}
+                />
+              </div>
               <ButtonComponent type="submit" width={"100%"} color="primary">
                 SUBMIT
               </ButtonComponent>
