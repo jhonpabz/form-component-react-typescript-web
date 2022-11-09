@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-describe("Contact Number Field Test", () => {
+describe("Submit Form Integration Test", () => {
   it("Text Field Rendering", () => {
     render(<FormExamples />);
     const TextFieldElement = screen.getByRole("textbox", { name: "Full Name" });
