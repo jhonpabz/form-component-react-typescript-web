@@ -8,4 +8,5 @@ export interface TextFieldInterface {
   autoFocus: boolean;
   type?: string;
   inputStyleTextField?: string;
+  style?: React.CSSProperties | any;
 }

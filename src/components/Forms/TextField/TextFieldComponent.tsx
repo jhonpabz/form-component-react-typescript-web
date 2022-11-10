@@ -12,6 +12,7 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
   disabled = false,
   autoFocus,
   type,
+  style,
   inputStyleTextField = "MATERIAL UI",
 }) => {
   return (
@@ -35,10 +36,37 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
               sx={{ mb: 1, mt: 1 }}
             />
           ) : (
-            <>
-              <p>{label}</p>
-              <input type="text" />
-            </>
+            <div style={{ marginBottom: "7px" }}>
+              <label
+                style={errors[name]?.message && { color: "#d32f2f" }}
+                htmlFor={name}
+              >
+                {label}:{" "}
+              </label>
+              <input
+                style={
+                  style
+                    ? style
+                    : {
+                        width: "98%",
+                        paddingTop: "7px",
+                        paddingBottom: "7px",
+                      }
+                }
+                type="text"
+                name={name}
+                onChange={onChange}
+                value={value || ""}
+              />
+              <span
+                style={{
+                  color: "#d32f2f",
+                  fontSize: "12px",
+                }}
+              >
+                {errors[name]?.message ? errors[name]?.message : null}
+              </span>
+            </div>
           )
         }
       />
