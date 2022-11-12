@@ -54,14 +54,23 @@ const FormExamples = () => {
   const cssFramework: string[] = ["MATERIAL UI", "PLAIN"];
 
   const [inputStyleTextField, setInputStyleTextField] = useState("MATERIAL UI");
-
+  const [inputStyleNumberField, setInputStyleNumberField] =
+    useState("MATERIAL UI");
   console.log(inputStyleTextField, "inputStyleTextField");
+  console.log(inputStyleNumberField, "inputStyleNumberField");
 
-  const wrapperSetParentState = useCallback(
+  const textFieldWrapper = useCallback(
     (val: React.SetStateAction<string>) => {
       setInputStyleTextField(val);
     },
     [setInputStyleTextField]
+  );
+
+  const numberFieldWrapper = useCallback(
+    (val: React.SetStateAction<string>) => {
+      setInputStyleNumberField(val);
+    },
+    [setInputStyleNumberField]
   );
 
   return (
@@ -111,7 +120,7 @@ const FormExamples = () => {
               <InputStyleComponent
                 cssFramework={cssFramework}
                 parentState={inputStyleTextField}
-                parentStateSetter={wrapperSetParentState}
+                parentStateSetter={textFieldWrapper}
               />
               {/* <div data-testid="custom-element" /> */}
               <NumberFieldComponent
@@ -122,6 +131,12 @@ const FormExamples = () => {
                 label="Contact Number"
                 name="contactNumber"
                 required={true}
+                inputStyleNumberField={inputStyleNumberField}
+              />
+              <InputStyleComponent
+                cssFramework={cssFramework}
+                parentState={inputStyleNumberField}
+                parentStateSetter={numberFieldWrapper}
               />
 
               <TextFieldComponent

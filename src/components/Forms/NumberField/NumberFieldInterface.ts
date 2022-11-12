@@ -11,4 +11,5 @@ export interface NumberFieldInterface {
   type?: HTMLInputTypeAttribute | undefined;
   variant?: "standard" | "filled" | "outlined" | undefined;
   style?: React.CSSProperties;
+  inputStyleNumberField?: string;
 }
