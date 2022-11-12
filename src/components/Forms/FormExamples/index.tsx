@@ -81,7 +81,13 @@ const FormExamples = () => {
         justifyContent="center"
         sx={{ backgroundColor: "#f9fafc" }}
       >
-        <Paper sx={{ maxWidth: 575, mt: 14 }} elevation={1}>
+        <Paper
+          sx={{
+            minWidth: 555,
+            mt: 14,
+          }}
+          elevation={1}
+        >
           <Box sx={{ textAlign: "center", mt: 7 }}>
             <Typography
               variant="h4"
