@@ -9,7 +9,6 @@ const InputStyleComponent: React.FC<InputStyleInterface> = ({
   parentStateSetter,
 }) => {
   const [inputStyle, setInputStyle] = useState<string>("MATERIAL UI");
-  console.log(inputStyle, "inputStyle");
 
   useEffect(() => {
     parentStateSetter(inputStyle);

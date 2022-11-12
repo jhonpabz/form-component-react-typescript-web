@@ -56,8 +56,6 @@ const FormExamples = () => {
   const [inputStyleTextField, setInputStyleTextField] = useState("MATERIAL UI");
   const [inputStyleNumberField, setInputStyleNumberField] =
     useState("MATERIAL UI");
-  console.log(inputStyleTextField, "inputStyleTextField");
-  console.log(inputStyleNumberField, "inputStyleNumberField");
 
   const textFieldWrapper = useCallback(
     (val: React.SetStateAction<string>) => {
@@ -128,7 +126,7 @@ const FormExamples = () => {
                 parentState={inputStyleTextField}
                 parentStateSetter={textFieldWrapper}
               />
-              {/* <div data-testid="custom-element" /> */}
+
               <NumberFieldComponent
                 autoFocus={false}
                 control={control}
