@@ -9,4 +9,5 @@ export interface TextFieldInterface {
   type?: string;
   inputStyleTextField?: string;
   style?: React.CSSProperties | any;
+  variant?: "standard" | "filled" | "outlined" | undefined;
 }
