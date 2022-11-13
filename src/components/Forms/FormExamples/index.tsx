@@ -11,6 +11,7 @@ import { InputSchema } from "./InputSchema";
 import NumberFieldComponent from "../NumberField/NumberFieldComponent";
 import Paper from "@mui/material/Paper";
 import InputStyleComponent from "../InputStyle/InputStyleComponent";
+import EmailFieldComponent from "../EmailField/EmailFieldComponent";
 
 const FormExamples = () => {
   const {
@@ -143,7 +144,7 @@ const FormExamples = () => {
                 parentStateSetter={numberFieldWrapper}
               />
 
-              <TextFieldComponent
+              {/* <TextFieldComponent
                 autoFocus={false}
                 control={control}
                 disabled={false}
@@ -151,6 +152,14 @@ const FormExamples = () => {
                 label="Email Address"
                 name="email"
                 required={true}
+              /> */}
+              <EmailFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                name="email"
+                required={true}
+                type="email"
               />
               <div data-testid="select-element">
                 <DropdownComponent
