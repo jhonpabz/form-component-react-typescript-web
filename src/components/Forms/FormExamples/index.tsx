@@ -1,20 +1,22 @@
-import React, { useState, useCallback } from "react";
-import TextFieldComponent from "../TextField/TextFieldComponent";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import ButtonComponent from "../Buttons/ButtonComponent";
-import { Box, Typography } from "@mui/material";
-import DropdownComponent from "../Dropdown/DropdownComponent";
-import FormContainer from "../FormContainer/FormContainer";
-import RadioButtonComponent from "../RadioButton/RadioButtonComponent";
-import { InputSchema } from "./InputSchema";
-import NumberFieldComponent from "../NumberField/NumberFieldComponent";
-import Paper from "@mui/material/Paper";
-import InputStyleComponent from "../InputStyle/InputStyleComponent";
-import EmailFieldComponent from "../EmailField/EmailFieldComponent";
+import React, { useState, useCallback } from 'react';
+import TextFieldComponent from '../TextField/TextFieldComponent';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import ButtonComponent from '../Buttons/ButtonComponent';
+import { Box, Typography } from '@mui/material';
+import DropdownComponent from '../Dropdown/DropdownComponent';
+import FormContainer from '../FormContainer/FormContainer';
+import RadioButtonComponent from '../RadioButton/RadioButtonComponent';
+import { InputSchema } from './InputSchema';
+import NumberFieldComponent from '../NumberField/NumberFieldComponent';
+import Paper from '@mui/material/Paper';
+import InputStyleComponent from '../InputStyle/InputStyleComponent';
+import EmailFieldComponent from '../EmailField/EmailFieldComponent';
+import CheckboxComponent from '../Checkbox/CheckboxComponent';
 
 const FormExamples = () => {
   const {
+    register,
     control,
     handleSubmit,
     formState: { errors },
@@ -24,39 +26,54 @@ const FormExamples = () => {
 
   const genderOptions: { value: string; label: string }[] = [
     {
-      value: "Male",
-      label: "Male",
+      value: 'Male',
+      label: 'Male',
     },
     {
-      value: "Female",
-      label: "Female",
+      value: 'Female',
+      label: 'Female',
     },
     {
-      value: "Others",
-      label: "Others",
+      value: 'Others',
+      label: 'Others',
     },
   ];
 
   const statusOptions: { value: string; label: string }[] = [
     {
-      value: "Single",
-      label: "Single",
+      value: 'Single',
+      label: 'Single',
     },
     {
-      value: "Married",
-      label: "Married",
+      value: 'Married',
+      label: 'Married',
     },
     {
-      value: "Others",
-      label: "Others",
+      value: 'Others',
+      label: 'Others',
     },
   ];
 
-  const cssFramework: string[] = ["MATERIAL UI", "PLAIN"];
+  const checkboxOptions: { value: string; label: string }[] = [
+    {
+      value: 'Sample 1',
+      label: 'Sample 1',
+    },
+    {
+      value: 'Sample 2',
+      label: 'Sample 2',
+    },
+    {
+      value: 'Sample 3',
+      label: 'Sample 3',
+    },
+  ];
 
-  const [inputStyleTextField, setInputStyleTextField] = useState("MATERIAL UI");
+  const cssFramework: string[] = ['MATERIAL UI', 'PLAIN'];
+
+  const [inputStyleTextField, setInputStyleTextField] = useState('MATERIAL UI');
   const [inputStyleNumberField, setInputStyleNumberField] =
-    useState("MATERIAL UI");
+    useState('MATERIAL UI');
 
   const textFieldWrapper = useCallback(
     (val: React.SetStateAction<string>) => {
@@ -78,7 +95,7 @@ const FormExamples = () => {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        sx={{ backgroundColor: "#f9fafc" }}
+        sx={{ backgroundColor: '#f9fafc' }}
       >
         <Paper
           sx={{
@@ -87,7 +104,7 @@ const FormExamples = () => {
           }}
           elevation={1}
         >
-          <Box sx={{ textAlign: "center", mt: 7 }}>
+          <Box sx={{ textAlign: 'center', mt: 7 }}>
             <Typography
               variant="h4"
               gutterBottom
@@ -103,9 +120,9 @@ const FormExamples = () => {
           <Box sx={{ p: 5 }}>
             <FormContainer
               defaultValues={{
-                fullName: "",
+                fullName: '',
                 contactNumber: null,
-                email: "",
+                email: '',
               }}
               schema={InputSchema}
               onSubmit={handleSubmit((data) => {
@@ -144,15 +161,6 @@ const FormExamples = () => {
                 parentStateSetter={numberFieldWrapper}
               />
 
-              {/* <TextFieldComponent
-                autoFocus={false}
-                control={control}
-                disabled={false}
-                errors={errors}
-                label="Email Address"
-                name="email"
-                required={true}
-              /> */}
               <EmailFieldComponent
                 autoFocus={false}
                 control={control}
@@ -179,7 +187,16 @@ const FormExamples = () => {
                   errors={errors}
                 />
               </div>
-              <ButtonComponent type="submit" width={"100%"} color="primary">
+
+              <CheckboxComponent
+                name="sampleCheckbox"
+                register={register}
+                errors={errors}
+                label={'Sample Checkbox'}
+                options={checkboxOptions}
+                sx={{ mt: 3 }}
+              />
+              <ButtonComponent type="submit" width={'100%'} color="primary">
                 SUBMIT
               </ButtonComponent>
             </FormContainer>
